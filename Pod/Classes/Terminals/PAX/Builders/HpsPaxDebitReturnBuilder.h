@@ -20,6 +20,7 @@
 
 @property (nonatomic, readwrite) int referenceNumber;
 @property (nonatomic, readwrite) int transactionId;
+@property (nonatomic, readwrite) int transactionNumber;
 @property (nonatomic, strong) NSNumber *amount;
 
 - (void) execute:(void(^)(HpsPaxDebitResponse*, NSError*))responseBlock;
