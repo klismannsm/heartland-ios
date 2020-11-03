@@ -34,7 +34,7 @@
 @property (nonatomic,strong) NSNumber *amountDue;
 @property (nonatomic,strong) NSNumber *balanceAmount;
 
-@property (nonatomic,strong) NSString *cardHolderName;
+@property (nonatomic,strong) NSString *cardholderName;
 @property (nonatomic,strong) NSString *cardBin;
 @property (nonatomic) bool cardPresent;
 @property (nonatomic,strong) NSString *expirationDate;
@@ -47,6 +47,7 @@
 @property (nonatomic) BOOL taxExept;
 @property (nonatomic,strong) NSString *taxExeptId;
 @property (nonatomic,strong) NSString *paymentType; //ticket number missing
+@property (nonatomic,strong) NSNumber *merchantFee;
 
 @property (nonatomic,strong) NSNumber *approvedAmount;
 @property (nonatomic,strong) HpsPaxHostResponse *hostResponse;
@@ -61,6 +62,8 @@
 @property (nonatomic,strong) NSString *cardHolderVerificationMethod;
 @property (nonatomic,strong) NSString *terminalVerficationResult;
 @property (nonatomic,strong) NSString *terminalSerialNumber;
+@property (nonatomic) BOOL storedResponse;
+@property (nonatomic,readwrite) int lastResponseTransactionId;
 
 - (void) mapResponse:(id <HpaResposeInterface>) response;
 
