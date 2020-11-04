@@ -36,7 +36,6 @@
 	self.deviceResponseMessage = [binaryReader readStringUntilDelimiter:HpsControlCodes_FS];
 
     if (![_messageIds containsObject:self.command]) {
-//        @throw [NSException exceptionWithName:@"HpsScanException" reason:[NSString stringWithFormat:@"Unexpected message type received. Expected %@ but received %@.", _messageId, self.command] userInfo:nil];
         NSString * reason = [NSString stringWithFormat:@"Unexpected message type received. Expected %@ but received %@.", _messageId, self.command];
         NSException * exception = [NSException exceptionWithName:@"HpsScanException" reason:reason userInfo:@{@"NSLocalizedDescription":reason}];
         [[NSNotificationCenter defaultCenter] postNotificationName:HpsScanExceptionNotification object:exception];
