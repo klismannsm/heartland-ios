@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'UIKit'
 
-  s.frameworks = 'UIKit'
+  s.static_framework = true
   s.dependency 'XMLDictionary'
   s.dependency 'VitalSDK'
   s.swift_version = '5.0'
