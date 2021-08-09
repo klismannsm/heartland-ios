@@ -64,6 +64,12 @@
 
 			self.cardBin = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_CARD_BIN];
 			self.signatureStatus = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_SIGNATURE_STATUS];
+            self.pinEntryStatus = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_PIN_ENTRY_STATUS];
+            self.printLine1 = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_PRINT_LINE_1];
+            self.printLine2 = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_PRINT_LINE_2];
+            self.printLine3 = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_PRINT_LINE_3];
+            self.printLine4 = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_PRINT_LINE_4];
+            self.printLine5 = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_PRINT_LINE_5];
 
 			self.applicationPrefferedName = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_APPLICATION_PREFERRED_NAME];
 			self.applicationName = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_APPLICATION_LABEL];
@@ -72,7 +78,7 @@
 			self.applicationCrytptogram = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TRANSACTION_CERTIFICATE];
 			self.cardHolderVerificationMethod = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_CUSTOMER_VERIFICATION_METHOD];
 			self.terminalVerficationResult = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TERMINAL_VERIFICATION_RESULTS];
-
+            self.transactionStatusInformation = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TRANSACTION_STATUS_INFORMATION];
 		}
 	} @catch (NSException *exception) {
 		NSLog(@"Error on mapResponse");
