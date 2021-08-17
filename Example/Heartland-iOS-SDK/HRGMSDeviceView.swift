@@ -8,8 +8,9 @@
 
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 14.0, *)
 struct HRGMSDeviceView: View {
+    @State private var isShowingError = false
     @ObservedObject var viewModel: HRGMSDeviceViewModel
     
     var body: some View {
@@ -21,11 +22,23 @@ struct HRGMSDeviceView: View {
                 HRGMSTerminalListItemView(viewModel: $0)
             }
         }
+        .alert(isPresented: $isShowingError) {
+            Alert(
+                title: Text("Error"),
+                message: Text(viewModel.gmsDeviceError!.localizedDescription),
+                dismissButton: .default(Text("Dismiss")) {
+                    isShowingError = false
+                }
+            )
+        }
+        .onChange(of: viewModel.gmsDeviceError, perform: { value in
+            isShowingError.toggle()
+        })
         .padding()
     }
 }
 
-@available(iOS 13.0, *)
+@available(iOS 14.0, *)
 struct HRGMSDeviceView_Previews: PreviewProvider {
     static var previews: some View {
         HRGMSDeviceView(viewModel: HRGMSDeviceViewModel())

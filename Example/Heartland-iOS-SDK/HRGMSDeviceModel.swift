@@ -22,6 +22,10 @@ class HRGMSDeviceModel {
         gmsDevice = wisecube
     }
     
+    func resetScanState() {
+        gmsDeviceError = nil
+    }
+    
     func startScan() {
         gmsDevice?.scan()
     }

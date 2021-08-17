@@ -16,6 +16,10 @@ class HRGMSDeviceViewModel: ObservableObject {
     
     @Published private var model: HRGMSDeviceModel = addHRGMSDeviceModel()
     
+    var gmsDeviceError: NSError? {
+        model.gmsDeviceError
+    }
+    
     var gmsTerminalViewModels: [HRGMSTerminalViewModel] {
         model.gmsDevicePeripheralList.map {
             HRGMSTerminalViewModel(terminalInfo: $0)

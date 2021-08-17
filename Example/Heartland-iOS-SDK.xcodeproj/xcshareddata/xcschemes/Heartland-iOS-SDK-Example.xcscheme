@@ -41,47 +41,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6003F5AD195388D20070C39A"
-               BuildableName = "Heartland-iOS-SDK_Tests.xctest"
-               BlueprintName = "Heartland-iOS-SDK_Tests"
-               ReferencedContainer = "container:Heartland-iOS-SDK.xcodeproj">
-            </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "Hps_Hpa_Admin_Test">
-               </Test>
-               <Test
-                  Identifier = "Hps_Hpa_Credit_Test">
-               </Test>
-               <Test
-                  Identifier = "Hps_Hpa_Debit_Test">
-               </Test>
-               <Test
-                  Identifier = "Hps_Hpa_EBT_Test">
-               </Test>
-               <Test
-                  Identifier = "Hps_Hpa_EOD_Test">
-               </Test>
-               <Test
-                  Identifier = "Hps_Hpa_Gift_Test">
-               </Test>
-               <Test
-                  Identifier = "Hps_Hpa_Report_Test">
-               </Test>
-               <Test
-                  Identifier = "Hps_Hpa_VRF_Test">
-               </Test>
-               <Test
-                  Identifier = "Hps_Pax_BatchMessage_Tests">
-               </Test>
-            </SkippedTests>
-         </TestableReference>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -91,8 +50,8 @@
             ReferencedContainer = "container:Heartland-iOS-SDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -114,8 +73,6 @@
             ReferencedContainer = "container:Heartland-iOS-SDK.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
