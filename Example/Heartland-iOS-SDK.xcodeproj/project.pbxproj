@@ -58,6 +58,7 @@
 		EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */; };
 		EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */; };
 		EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */; };
+		EFC04DE426CC75B200182524 /* HRGMSDeviceModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */; };
 		EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */; };
 		EFDB8B4B267C176D004DFCDA /* HRGMSSerializationService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B4A267C176D004DFCDA /* HRGMSSerializationService.m */; };
 /* End PBXBuildFile section */
@@ -155,6 +156,7 @@
 		EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionViewModel.m; sourceTree = "<group>"; };
 		EFA712B1268CE7000041EC21 /* HRGMSTransactionLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionLogger.h; sourceTree = "<group>"; };
 		EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionLogger.m; sourceTree = "<group>"; };
+		EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSDeviceModelService.swift; sourceTree = "<group>"; };
 		EFDB8B44267C0A62004DFCDA /* HRGMSTransactionService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionService.h; sourceTree = "<group>"; };
 		EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionService.m; sourceTree = "<group>"; };
 		EFDB8B49267C176D004DFCDA /* HRGMSSerializationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSSerializationService.h; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				84CD39E71C45A73E006FED91 /* heartlandlogo.png */,
 				6003F594195388D20070C39A /* Supporting Files */,
 				EF35454126CC38C20072085F /* HRGMSDeviceModel.swift */,
+				EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */,
 				EF35454726CC3B160072085F /* HRGMSDeviceView.swift */,
 				EF35454326CC3A4B0072085F /* HRGMSDeviceViewModel.swift */,
 				EF35454526CC3A7A0072085F /* HRGMSTerminalViewModel.swift */,
@@ -617,6 +620,7 @@
 				EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */,
 				EF7F84EF2698CE1300CA7099 /* HRPAXTransactionViewController.m in Sources */,
 				EF35454826CC3B160072085F /* HRGMSDeviceView.swift in Sources */,
+				EFC04DE426CC75B200182524 /* HRGMSDeviceModelService.swift in Sources */,
 				EF35454226CC38C20072085F /* HRGMSDeviceModel.swift in Sources */,
 				EF7F84F92698D3BA00CA7099 /* HRPAXTransactionManager.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

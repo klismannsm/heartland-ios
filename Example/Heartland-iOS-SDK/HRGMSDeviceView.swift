@@ -22,19 +22,22 @@ struct HRGMSDeviceView: View {
                 HRGMSTerminalListItemView(viewModel: $0)
             }
         }
+        .padding()
         .alert(isPresented: $isShowingError) {
             Alert(
                 title: Text("Error"),
                 message: Text(viewModel.gmsDeviceError!.localizedDescription),
                 dismissButton: .default(Text("Dismiss")) {
                     isShowingError = false
+                    viewModel.resetScanState()
                 }
             )
         }
         .onChange(of: viewModel.gmsDeviceError, perform: { value in
-            isShowingError.toggle()
+            if viewModel.gmsDeviceError != nil {
+                isShowingError = true
+            }
         })
-        .padding()
     }
 }
 
