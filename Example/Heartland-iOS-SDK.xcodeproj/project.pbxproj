@@ -45,6 +45,7 @@
 		E2A3363B2455C6950041AD64 /* Hps_Pax_Batch_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */; };
 		E2B1C1BC2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */; };
 		E2B1C1EB24190C820040D5C7 /* Hps_Hpa_EBT_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1C1EA24190C820040D5C7 /* Hps_Hpa_EBT_Test.m */; };
+		EF35454226CC38C20072085F /* HRGMSDeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF35454126CC38C20072085F /* HRGMSDeviceModel.swift */; };
 		EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */; };
 		EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */; };
 		EF7F84EF2698CE1300CA7099 /* HRPAXTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7F84EE2698CE1300CA7099 /* HRPAXTransactionViewController.m */; };
@@ -122,6 +123,8 @@
 		E2A3363A2455C6950041AD64 /* Hps_Pax_Batch_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Pax_Batch_Tests.m; sourceTree = "<group>"; };
 		E2B1C1BB2403DFF20040D5C7 /* Hps_Hpa_EOD_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EOD_Test.m; sourceTree = "<group>"; };
 		E2B1C1EA24190C820040D5C7 /* Hps_Hpa_EBT_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hps_Hpa_EBT_Test.m; sourceTree = "<group>"; };
+		EF35454026CC38C10072085F /* Heartland-iOS-SDK_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Heartland-iOS-SDK_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		EF35454126CC38C20072085F /* HRGMSDeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSDeviceModel.swift; sourceTree = "<group>"; };
 		EF6EA440263775200039FA6B /* HRGMSDeviceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSDeviceViewController.h; sourceTree = "<group>"; };
 		EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSDeviceViewController.m; sourceTree = "<group>"; };
 		EF6EA445263776030039FA6B /* HRGMSDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSDeviceManager.h; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				6003F5A6195388D20070C39A /* HpsViewController.m */,
 				84CD39E71C45A73E006FED91 /* heartlandlogo.png */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				EF35454126CC38C20072085F /* HRGMSDeviceModel.swift */,
+				EF35454026CC38C10072085F /* Heartland-iOS-SDK_Example-Bridging-Header.h */,
 			);
 			name = "Example for Heartland-iOS-SDK";
 			path = "Heartland-iOS-SDK";
@@ -445,6 +450,7 @@
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = 264BX5RC4N;
+						LastSwiftMigration = 1250;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -595,6 +601,7 @@
 				EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */,
 				EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */,
 				EF7F84EF2698CE1300CA7099 /* HRPAXTransactionViewController.m in Sources */,
+				EF35454226CC38C20072085F /* HRGMSDeviceModel.swift in Sources */,
 				EF7F84F92698D3BA00CA7099 /* HRPAXTransactionManager.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
@@ -750,16 +757,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartlandpaymentsystems.iOS-SDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -770,16 +782,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartlandpaymentsystems.iOS-SDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK_Example-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -788,6 +804,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 61BF46B1C380625FF377FAA8 /* Pods-Heartland-iOS-SDK_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -812,6 +829,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 253ABA11EC670E90EACA486A /* Pods-Heartland-iOS-SDK_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -881,16 +899,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.heartlandpaymentsystems.iOS-SDK-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Pax_Testing;
@@ -899,6 +922,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 08D636DD28A9667ED2741E32 /* Pods-Heartland-iOS-SDK_Tests.pax_testing.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
