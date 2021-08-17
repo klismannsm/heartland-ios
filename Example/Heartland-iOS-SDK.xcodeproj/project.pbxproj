@@ -49,6 +49,7 @@
 		EF35454426CC3A4B0072085F /* HRGMSDeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF35454326CC3A4B0072085F /* HRGMSDeviceViewModel.swift */; };
 		EF35454626CC3A7A0072085F /* HRGMSTerminalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF35454526CC3A7A0072085F /* HRGMSTerminalViewModel.swift */; };
 		EF35454826CC3B160072085F /* HRGMSDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF35454726CC3B160072085F /* HRGMSDeviceView.swift */; };
+		EF35454C26CC3E9E0072085F /* HRGMSTerminalListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF35454B26CC3E9E0072085F /* HRGMSTerminalListItemView.swift */; };
 		EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */; };
 		EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */; };
 		EF7F84EF2698CE1300CA7099 /* HRPAXTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7F84EE2698CE1300CA7099 /* HRPAXTransactionViewController.m */; };
@@ -131,6 +132,7 @@
 		EF35454326CC3A4B0072085F /* HRGMSDeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSDeviceViewModel.swift; sourceTree = "<group>"; };
 		EF35454526CC3A7A0072085F /* HRGMSTerminalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSTerminalViewModel.swift; sourceTree = "<group>"; };
 		EF35454726CC3B160072085F /* HRGMSDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSDeviceView.swift; sourceTree = "<group>"; };
+		EF35454B26CC3E9E0072085F /* HRGMSTerminalListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSTerminalListItemView.swift; sourceTree = "<group>"; };
 		EF6EA440263775200039FA6B /* HRGMSDeviceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSDeviceViewController.h; sourceTree = "<group>"; };
 		EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSDeviceViewController.m; sourceTree = "<group>"; };
 		EF6EA445263776030039FA6B /* HRGMSDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSDeviceManager.h; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				EF35454726CC3B160072085F /* HRGMSDeviceView.swift */,
 				EF35454326CC3A4B0072085F /* HRGMSDeviceViewModel.swift */,
 				EF35454526CC3A7A0072085F /* HRGMSTerminalViewModel.swift */,
+				EF35454B26CC3E9E0072085F /* HRGMSTerminalListItemView.swift */,
 				EF35454026CC38C10072085F /* Heartland-iOS-SDK_Example-Bridging-Header.h */,
 			);
 			name = "Example for Heartland-iOS-SDK";
@@ -604,6 +607,7 @@
 				EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */,
 				EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */,
 				6003F5A7195388D20070C39A /* HpsViewController.m in Sources */,
+				EF35454C26CC3E9E0072085F /* HRGMSTerminalListItemView.swift in Sources */,
 				EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */,
 				EFDB8B4B267C176D004DFCDA /* HRGMSSerializationService.m in Sources */,
 				EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */,
