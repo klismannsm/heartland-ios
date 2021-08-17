@@ -245,12 +245,6 @@
 				6003F5A6195388D20070C39A /* HpsViewController.m */,
 				84CD39E71C45A73E006FED91 /* heartlandlogo.png */,
 				6003F594195388D20070C39A /* Supporting Files */,
-				EF35454126CC38C20072085F /* HRGMSDeviceModel.swift */,
-				EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */,
-				EF35454726CC3B160072085F /* HRGMSDeviceView.swift */,
-				EF35454326CC3A4B0072085F /* HRGMSDeviceViewModel.swift */,
-				EF35454526CC3A7A0072085F /* HRGMSTerminalViewModel.swift */,
-				EF35454B26CC3E9E0072085F /* HRGMSTerminalListItemView.swift */,
 				EF35454026CC38C10072085F /* Heartland-iOS-SDK_Example-Bridging-Header.h */,
 			);
 			name = "Example for Heartland-iOS-SDK";
@@ -366,6 +360,7 @@
 		EF7F84DD2698CA4200CA7099 /* GMS */ = {
 			isa = PBXGroup;
 			children = (
+				EF81041626CC7A00008269DF /* Device */,
 				EF6EA440263775200039FA6B /* HRGMSDeviceViewController.h */,
 				EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */,
 				EFDB8B49267C176D004DFCDA /* HRGMSSerializationService.h */,
@@ -409,6 +404,19 @@
 				EF7F84E92698CCFC00CA7099 /* HRPAXTransactionViewInput.h */,
 			);
 			name = Contract;
+			sourceTree = "<group>";
+		};
+		EF81041626CC7A00008269DF /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				EF35454126CC38C20072085F /* HRGMSDeviceModel.swift */,
+				EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */,
+				EF35454726CC3B160072085F /* HRGMSDeviceView.swift */,
+				EF35454326CC3A4B0072085F /* HRGMSDeviceViewModel.swift */,
+				EF35454526CC3A7A0072085F /* HRGMSTerminalViewModel.swift */,
+				EF35454B26CC3E9E0072085F /* HRGMSTerminalListItemView.swift */,
+			);
+			name = Device;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
