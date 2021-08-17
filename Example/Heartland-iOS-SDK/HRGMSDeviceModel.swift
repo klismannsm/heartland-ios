@@ -21,6 +21,14 @@ class HRGMSDeviceModel {
         wisecube.deviceScanObserver = self
         gmsDevice = wisecube
     }
+    
+    func startScan() {
+        gmsDevice?.scan()
+    }
+    
+    func stopScan() {
+        gmsDevice?.stopScan()
+    }
 }
 
 extension HRGMSDeviceModel: GMSDeviceDelegate {
