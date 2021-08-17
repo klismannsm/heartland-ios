@@ -12,8 +12,12 @@ import SwiftUI
 @available(iOS 13.0, *)
 class HRGMSDeviceViewModel: ObservableObject {
     @Published private var model: HRGMSDeviceModel!
-    private lazy var modelObserver = service.$model.sink { self.model = $0 }
+    private var modelObserver: AnyCancellable?
     @ObservedObject private var service = HRGMSDeviceModelService()
+    
+    init() {
+        modelObserver = service.$model.sink { self.model = $0 }
+    }
     
     var gmsDeviceError: NSError? {
         model.gmsDeviceError
