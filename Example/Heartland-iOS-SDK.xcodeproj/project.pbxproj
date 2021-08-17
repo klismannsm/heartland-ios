@@ -57,6 +57,7 @@
 		EF7F84F92698D3BA00CA7099 /* HRPAXTransactionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7F84F82698D3BA00CA7099 /* HRPAXTransactionManager.m */; };
 		EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */; };
 		EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */; };
+		EF81041826CC7AAC008269DF /* HRGMSDeviceHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81041726CC7AAC008269DF /* HRGMSDeviceHostingController.swift */; };
 		EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */; };
 		EFC04DE426CC75B200182524 /* HRGMSDeviceModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */; };
 		EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */; };
@@ -154,6 +155,7 @@
 		EF80F8BE267BF3F50097FF73 /* HRGMSTransactionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionViewController.m; sourceTree = "<group>"; };
 		EF80F8C9267BF4730097FF73 /* HRGMSTransactionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionViewModel.h; sourceTree = "<group>"; };
 		EF80F8CA267BF4730097FF73 /* HRGMSTransactionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionViewModel.m; sourceTree = "<group>"; };
+		EF81041726CC7AAC008269DF /* HRGMSDeviceHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSDeviceHostingController.swift; sourceTree = "<group>"; };
 		EFA712B1268CE7000041EC21 /* HRGMSTransactionLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionLogger.h; sourceTree = "<group>"; };
 		EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionLogger.m; sourceTree = "<group>"; };
 		EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSDeviceModelService.swift; sourceTree = "<group>"; };
@@ -409,12 +411,13 @@
 		EF81041626CC7A00008269DF /* Device */ = {
 			isa = PBXGroup;
 			children = (
+				EF81041726CC7AAC008269DF /* HRGMSDeviceHostingController.swift */,
 				EF35454126CC38C20072085F /* HRGMSDeviceModel.swift */,
 				EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */,
 				EF35454726CC3B160072085F /* HRGMSDeviceView.swift */,
 				EF35454326CC3A4B0072085F /* HRGMSDeviceViewModel.swift */,
-				EF35454526CC3A7A0072085F /* HRGMSTerminalViewModel.swift */,
 				EF35454B26CC3E9E0072085F /* HRGMSTerminalListItemView.swift */,
+				EF35454526CC3A7A0072085F /* HRGMSTerminalViewModel.swift */,
 			);
 			name = Device;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 			files = (
 				EF35454626CC3A7A0072085F /* HRGMSTerminalViewModel.swift in Sources */,
 				6003F59E195388D20070C39A /* HpsAppDelegate.m in Sources */,
+				EF81041826CC7AAC008269DF /* HRGMSDeviceHostingController.swift in Sources */,
 				EF80F8CB267BF4730097FF73 /* HRGMSTransactionViewModel.m in Sources */,
 				EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */,
 				6003F5A7195388D20070C39A /* HpsViewController.m in Sources */,
@@ -788,6 +792,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
@@ -813,6 +818,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";
@@ -930,6 +936,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Heartland-iOS-SDK/Heartland-iOS-SDK-Prefix.pch";
 				INFOPLIST_FILE = "Heartland-iOS-SDK/Heartland-iOS-SDK-Info.plist";

@@ -13,11 +13,28 @@ import SwiftUI
 class HRGMSDeviceModelService: ObservableObject {
     @Published var model = HRGMSDeviceModel()
     
+    init() {
+        addWiseCubeDeviceFromSampleConfig()
+    }
+    
     func addWiseCubeDevice(config: HpsConnectionConfig) {
         let wisecube = HpsWiseCubeDevice(config: config)
         wisecube.deviceDelegate = self
         wisecube.deviceScanObserver = self
         model.gmsDevice = wisecube
+    }
+    
+    func addWiseCubeDeviceFromSampleConfig() {
+        let config = HpsConnectionConfig()
+        config.versionNumber = "3409"
+        config.developerID = "002914"
+        config.username = "701389328"
+        config.password = "$Test1234"
+        config.siteID = "142914"
+        config.deviceID = "6399854"
+        config.licenseID = "142827"
+        config.timeout = 60
+        addWiseCubeDevice(config: config)
     }
     
     func resetScanState() {
