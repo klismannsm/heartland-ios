@@ -23,3 +23,17 @@ struct HRGMSTerminalViewModel: Identifiable {
         self.connected = connected
     }
 }
+
+// MARK: Sample
+
+extension HRGMSTerminalViewModel {
+    static var sample: HRGMSTerminalViewModel {
+        .init(connected: false, id: UUID(), name: "CHB120931239")
+    }
+    
+    init(connected: Bool, id: UUID, name: String) {
+        self.connected = connected
+        self.id = id
+        self.name = name
+    }
+}
