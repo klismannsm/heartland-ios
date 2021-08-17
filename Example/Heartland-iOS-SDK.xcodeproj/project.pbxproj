@@ -48,6 +48,7 @@
 		EF35454226CC38C20072085F /* HRGMSDeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF35454126CC38C20072085F /* HRGMSDeviceModel.swift */; };
 		EF35454426CC3A4B0072085F /* HRGMSDeviceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF35454326CC3A4B0072085F /* HRGMSDeviceViewModel.swift */; };
 		EF35454626CC3A7A0072085F /* HRGMSTerminalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF35454526CC3A7A0072085F /* HRGMSTerminalViewModel.swift */; };
+		EF35454826CC3B160072085F /* HRGMSDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF35454726CC3B160072085F /* HRGMSDeviceView.swift */; };
 		EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */; };
 		EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EA446263776030039FA6B /* HRGMSDeviceManager.m */; };
 		EF7F84EF2698CE1300CA7099 /* HRPAXTransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7F84EE2698CE1300CA7099 /* HRPAXTransactionViewController.m */; };
@@ -129,6 +130,7 @@
 		EF35454126CC38C20072085F /* HRGMSDeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSDeviceModel.swift; sourceTree = "<group>"; };
 		EF35454326CC3A4B0072085F /* HRGMSDeviceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSDeviceViewModel.swift; sourceTree = "<group>"; };
 		EF35454526CC3A7A0072085F /* HRGMSTerminalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSTerminalViewModel.swift; sourceTree = "<group>"; };
+		EF35454726CC3B160072085F /* HRGMSDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSDeviceView.swift; sourceTree = "<group>"; };
 		EF6EA440263775200039FA6B /* HRGMSDeviceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSDeviceViewController.h; sourceTree = "<group>"; };
 		EF6EA441263775200039FA6B /* HRGMSDeviceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSDeviceViewController.m; sourceTree = "<group>"; };
 		EF6EA445263776030039FA6B /* HRGMSDeviceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSDeviceManager.h; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				84CD39E71C45A73E006FED91 /* heartlandlogo.png */,
 				6003F594195388D20070C39A /* Supporting Files */,
 				EF35454126CC38C20072085F /* HRGMSDeviceModel.swift */,
+				EF35454726CC3B160072085F /* HRGMSDeviceView.swift */,
 				EF35454326CC3A4B0072085F /* HRGMSDeviceViewModel.swift */,
 				EF35454526CC3A7A0072085F /* HRGMSTerminalViewModel.swift */,
 				EF35454026CC38C10072085F /* Heartland-iOS-SDK_Example-Bridging-Header.h */,
@@ -609,6 +612,7 @@
 				EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */,
 				EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */,
 				EF7F84EF2698CE1300CA7099 /* HRPAXTransactionViewController.m in Sources */,
+				EF35454826CC3B160072085F /* HRGMSDeviceView.swift in Sources */,
 				EF35454226CC38C20072085F /* HRGMSDeviceModel.swift in Sources */,
 				EF7F84F92698D3BA00CA7099 /* HRPAXTransactionManager.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
