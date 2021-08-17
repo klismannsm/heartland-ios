@@ -13,7 +13,15 @@ struct HRGMSDeviceView: View {
     @ObservedObject var viewModel: HRGMSDeviceViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button(viewModel.scanButtonTitle) {
+                viewModel.toggleDeviceScan()
+            }
+            List(viewModel.gmsTerminalViewModels, id: \.id) {
+                HRGMSTerminalListItemView(viewModel: $0)
+            }
+        }
+        .padding()
     }
 }
 

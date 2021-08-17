@@ -21,4 +21,14 @@ class HRGMSDeviceViewModel: ObservableObject {
             HRGMSTerminalViewModel(terminalInfo: $0)
         }
     }
+    
+    var scanButtonTitle: String {
+        model.gmsDeviceIsScanning ? "Stop Scan" : "Scan"
+    }
+    
+    func toggleDeviceScan() {
+        model.gmsDeviceIsScanning
+            ? model.stopScan()
+            : model.startScan()
+    }
 }
