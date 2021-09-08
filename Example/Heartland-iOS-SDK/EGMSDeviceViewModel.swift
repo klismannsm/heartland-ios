@@ -17,6 +17,9 @@ class EGMSDeviceViewModel {
 }
 
 extension EGMSDeviceViewModel: EGMSDeviceModelOutput {
+    func didUpdate(scanning: Bool) {
+        isScanning = scanning
+    }
 }
 
 extension EGMSDeviceViewModel: EGMSDeviceViewModelInput {
@@ -27,6 +30,6 @@ extension EGMSDeviceViewModel: EGMSDeviceViewModelInput {
     }
     
     func toggleScan() {
-        isScanning = !isScanning
+        isScanning ? model.stopScan() : model.startScan()
     }
 }

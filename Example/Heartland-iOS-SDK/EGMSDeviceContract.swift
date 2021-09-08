@@ -16,9 +16,12 @@ protocol EGMSDeviceCoordinatorOutput: AnyObject {
 }
 
 protocol EGMSDeviceModelInput: AnyObject {
+    func startScan()
+    func stopScan()
 }
 
 protocol EGMSDeviceModelOutput: AnyObject {
+    func didUpdate(scanning: Bool)
 }
 
 protocol EGMSDeviceViewInput: UIViewController {

@@ -10,4 +10,11 @@ class EGMSDeviceModel {
 }
 
 extension EGMSDeviceModel: EGMSDeviceModelInput {
+    func startScan() {
+        viewModel.didUpdate(scanning: true)
+    }
+    
+    func stopScan() {
+        viewModel.didUpdate(scanning: false)
+    }
 }
