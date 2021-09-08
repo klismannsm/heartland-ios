@@ -28,7 +28,11 @@ protocol EGMSDeviceViewOutput: AnyObject {
 }
 
 protocol EGMSDeviceViewModelInput: AnyObject {
+    var egmsDeviceScanButtonTitle: String { get }
+    
+    func toggleScan()
 }
 
 protocol EGMSDeviceViewModelOutput: AnyObject {
+    func updateScanViews()
 }
