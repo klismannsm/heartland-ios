@@ -42,5 +42,5 @@ protocol EGMSDeviceViewModelOutput: AnyObject {
     func show(connected: Bool)
     func show(error: Error)
     func show(scanning: Bool)
-    func show(terminals: [HpsTerminalInfo])
+    func show(terminalViewModels: [EGMSTerminalViewModel])
 }

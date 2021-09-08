@@ -76,6 +76,8 @@
 		EF918EE426E91575003BBC3B /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF918EE326E91575003BBC3B /* UIViewController+Utility.swift */; };
 		EF918EE626E91D8F003BBC3B /* EGMSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF918EE526E91D8F003BBC3B /* EGMSColor.swift */; };
 		EF918EE826E923B6003BBC3B /* EGMSDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF918EE726E923B6003BBC3B /* EGMSDataManager.swift */; };
+		EF918EEA26E929F1003BBC3B /* EGMSTerminalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF918EE926E929F1003BBC3B /* EGMSTerminalTableViewCell.swift */; };
+		EF918EEC26E92ADB003BBC3B /* EGMSTerminalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF918EEB26E92ADB003BBC3B /* EGMSTerminalViewModel.swift */; };
 		EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */; };
 		EFC04DE426CC75B200182524 /* HRGMSDeviceModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */; };
 		EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */; };
@@ -192,6 +194,8 @@
 		EF918EE326E91575003BBC3B /* UIViewController+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		EF918EE526E91D8F003BBC3B /* EGMSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGMSColor.swift; sourceTree = "<group>"; };
 		EF918EE726E923B6003BBC3B /* EGMSDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGMSDataManager.swift; sourceTree = "<group>"; };
+		EF918EE926E929F1003BBC3B /* EGMSTerminalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGMSTerminalTableViewCell.swift; sourceTree = "<group>"; };
+		EF918EEB26E92ADB003BBC3B /* EGMSTerminalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGMSTerminalViewModel.swift; sourceTree = "<group>"; };
 		EFA712B1268CE7000041EC21 /* HRGMSTransactionLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionLogger.h; sourceTree = "<group>"; };
 		EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionLogger.m; sourceTree = "<group>"; };
 		EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSDeviceModelService.swift; sourceTree = "<group>"; };
@@ -467,6 +471,8 @@
 				EF918EC426E90D7A003BBC3B /* EGMSDeviceModel.swift */,
 				EF918EC526E90D7A003BBC3B /* EGMSDeviceViewController.swift */,
 				EF918EC326E90D7A003BBC3B /* EGMSDeviceViewModel.swift */,
+				EF918EE926E929F1003BBC3B /* EGMSTerminalTableViewCell.swift */,
+				EF918EEB26E92ADB003BBC3B /* EGMSTerminalViewModel.swift */,
 			);
 			name = Device;
 			sourceTree = "<group>";
@@ -716,6 +722,7 @@
 				EF80F8BF267BF3F50097FF73 /* HRGMSTransactionViewController.m in Sources */,
 				EF918EDD26E90E15003BBC3B /* EGMSHomeCoordinator.swift in Sources */,
 				EFDB8B4B267C176D004DFCDA /* HRGMSSerializationService.m in Sources */,
+				EF918EEA26E929F1003BBC3B /* EGMSTerminalTableViewCell.swift in Sources */,
 				EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */,
 				EF918EC626E90D7A003BBC3B /* EGMSDeviceCoordinator.swift in Sources */,
 				EF918EC726E90D7A003BBC3B /* EGMSDeviceContract.swift in Sources */,
@@ -735,6 +742,7 @@
 				EF918ED226E90DF5003BBC3B /* EGMSTransactionCoordinator.swift in Sources */,
 				EF918EC826E90D7A003BBC3B /* EGMSDeviceViewModel.swift in Sources */,
 				EF35454226CC38C20072085F /* HRGMSDeviceModel.swift in Sources */,
+				EF918EEC26E92ADB003BBC3B /* EGMSTerminalViewModel.swift in Sources */,
 				EF7F84F92698D3BA00CA7099 /* HRPAXTransactionManager.m in Sources */,
 				EF918EDF26E90E15003BBC3B /* EGMSHomeViewModel.swift in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
