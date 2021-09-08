@@ -482,10 +482,7 @@
 		EF918ECC26E90DA6003BBC3B /* New */ = {
 			isa = PBXGroup;
 			children = (
-				EF918EE526E91D8F003BBC3B /* EGMSColor.swift */,
-				EF918EE726E923B6003BBC3B /* EGMSDataManager.swift */,
-				EF918EED26E930C7003BBC3B /* UIView+Utility.swift */,
-				EF918EE326E91575003BBC3B /* UIViewController+Utility.swift */,
+				EF918EEF26E93506003BBC3B /* Shared */,
 				EF918ECB26E90D99003BBC3B /* Device */,
 				EF918EE226E90E19003BBC3B /* Home */,
 				EF918ED726E90DFC003BBC3B /* Transaction */,
@@ -515,6 +512,17 @@
 				EF918EDA26E90E15003BBC3B /* EGMSHomeViewModel.swift */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		EF918EEF26E93506003BBC3B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				EF918EE526E91D8F003BBC3B /* EGMSColor.swift */,
+				EF918EE726E923B6003BBC3B /* EGMSDataManager.swift */,
+				EF918EED26E930C7003BBC3B /* UIView+Utility.swift */,
+				EF918EE326E91575003BBC3B /* UIViewController+Utility.swift */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
