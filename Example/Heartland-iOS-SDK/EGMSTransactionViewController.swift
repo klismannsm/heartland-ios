@@ -12,6 +12,9 @@ class EGMSTransactionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .egmsBlue
+        
         addEGMSTransactionSubviews()
         configureEGMSTransactionSubviews()
         constrainEGMSTransactionSubviews()

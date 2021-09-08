@@ -23,6 +23,9 @@ class EGMSHomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .egmsDarkPurple
+        
         addEGMSHomeSubviews()
         configureEGMSHomeSubviews()
         constrainEGMSHomeSubviews()
