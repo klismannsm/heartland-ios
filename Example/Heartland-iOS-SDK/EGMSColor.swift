@@ -29,6 +29,10 @@ extension UIColor {
         color(from: "#d0d890")
     }
     
+    static var egmsOrange: UIColor {
+        color(from: "#e0aa38")
+    }
+    
     private static func color(from hex: String) -> UIColor {
         var cString: String = hex
             .trimmingCharacters(in: .whitespacesAndNewlines)

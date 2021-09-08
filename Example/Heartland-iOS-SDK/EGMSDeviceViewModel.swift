@@ -51,6 +51,10 @@ extension EGMSDeviceViewModel: EGMSDeviceViewModelInput {
         model.connect(terminalWithId: terminalId)
     }
     
+    func disconnect() {
+        model.disconnectDevice()
+    }
+    
     func toggleScan() {
         isScanning ? model.stopScan() : model.startScan()
     }

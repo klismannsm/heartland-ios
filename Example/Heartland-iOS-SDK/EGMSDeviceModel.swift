@@ -42,6 +42,10 @@ extension EGMSDeviceModel: EGMSDeviceModelInput {
         manager.device.connectDevice(terminal)
     }
     
+    func disconnectDevice() {
+        EGMSDataManager.shared.device.gmsWrapper?.disconnect()
+    }
+    
     func startScan() {
         EGMSDataManager.shared.device.scan()
     }

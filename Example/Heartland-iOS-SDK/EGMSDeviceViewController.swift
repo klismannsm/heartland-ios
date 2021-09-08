@@ -9,6 +9,7 @@ import UIKit
 
 class EGMSDeviceViewController: UIViewController {
     weak var connectionPendingLabel: UILabel!
+    weak var disconnectButton: UIButton!
     weak var scanButton: UIButton!
     weak var terminalTableView: UITableView!
     var terminalViewModels = [EGMSTerminalViewModel]()
@@ -26,15 +27,18 @@ class EGMSDeviceViewController: UIViewController {
     
     private func addEGMSDeviceSubviews() {
         let connectionPendingView = UILabel()
+        let disconnectButton = UIButton()
         let scanButton = UIButton()
         let terminalTableView = UITableView()
         
         view.addSubview(connectionPendingView)
+        view.addSubview(disconnectButton)
         view.addSubview(scanButton)
         view.addSubview(terminalTableView)
         view.bringSubviewToFront(connectionPendingView)
         
         self.connectionPendingLabel = connectionPendingView
+        self.disconnectButton = disconnectButton
         self.scanButton = scanButton
         self.terminalTableView = terminalTableView
     }
@@ -46,6 +50,13 @@ class EGMSDeviceViewController: UIViewController {
         connectionPendingLabel.textAlignment = .center
         connectionPendingLabel.textColor = .egmsLightGreen
         connectionPendingLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        disconnectButton.addTarget(self, action: #selector(disconnectTapped), for: .touchUpInside)
+        disconnectButton.backgroundColor = .egmsOrange
+        disconnectButton.setTitle("Disconnect", for: .normal)
+        disconnectButton.setTitleColor(.white, for: .normal)
+        disconnectButton.translatesAutoresizingMaskIntoConstraints = false
+        show(connected: false)
         
         scanButton.addTarget(self, action: #selector(scanTapped), for: .touchUpInside)
         scanButton.backgroundColor = .egmsGreen
@@ -63,6 +74,7 @@ class EGMSDeviceViewController: UIViewController {
     
     private func constrainEGMSDeviceSubviews() {
         connectionPendingLabel.pin(to: view)
+        disconnectButton.pin(to: scanButton)
         
         NSLayoutConstraint.activate([
             scanButton.heightAnchor.constraint(equalToConstant: 54),
@@ -76,6 +88,10 @@ class EGMSDeviceViewController: UIViewController {
         ])
     }
     
+    @objc private func disconnectTapped() {
+        viewModel.disconnect()
+    }
+    
     @objc private func scanTapped() {
         viewModel.toggleScan()
     }
@@ -86,7 +102,9 @@ extension EGMSDeviceViewController: EGMSDeviceViewInput {
 
 extension EGMSDeviceViewController: EGMSDeviceViewModelOutput {
     func show(connected: Bool) {
-        terminalTableView.isHidden = true
+        disconnectButton.isHidden = !connected
+        scanButton.isHidden = connected
+        terminalTableView.isHidden = connected
     }
     
     func show(connecting: Bool) {
