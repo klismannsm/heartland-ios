@@ -10,24 +10,32 @@ import SwiftUI
 
 @available(iOS 14.0, *)
 class HRGMSDeviceHostingController: UIViewController {
+    private let useSwiftUIView = false
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let viewModel = HRGMSDeviceViewModel()
-        let view = HRGMSDeviceView(viewModel: viewModel)
-        let wrapped = UIHostingController(rootView: view)
-        let wrappedView = wrapped.view!
-        wrappedView.translatesAutoresizingMaskIntoConstraints = false
-        
-        addChild(wrapped)
-        self.view.addSubview(wrapped.view)
-        wrapped.didMove(toParent: self)
-        
-        NSLayoutConstraint.activate([
-            wrappedView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            wrappedView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            wrappedView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            wrappedView.topAnchor.constraint(equalTo: self.view.topAnchor),
-        ])
+        if useSwiftUIView {
+            let viewModel = HRGMSDeviceViewModel()
+            let view = HRGMSDeviceView(viewModel: viewModel)
+            let wrapped = UIHostingController(rootView: view)
+            let wrappedView = wrapped.view!
+            wrappedView.translatesAutoresizingMaskIntoConstraints = false
+            
+            addChild(wrapped)
+            self.view.addSubview(wrapped.view)
+            wrapped.didMove(toParent: self)
+            
+            NSLayoutConstraint.activate([
+                wrappedView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+                wrappedView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+                wrappedView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+                wrappedView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            ])
+        } else {
+            let navigationController = self.navigationController!
+            let coordinator = EGMSHomeCoordinator(navigationController: navigationController)
+            coordinator.startEGMSHome()
+        }
     }
 }
