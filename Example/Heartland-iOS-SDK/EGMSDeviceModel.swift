@@ -35,6 +35,13 @@ class EGMSDeviceModel {
 }
 
 extension EGMSDeviceModel: EGMSDeviceModelInput {
+    func connect(terminalWithId terminalId: UUID) {
+        let manager = EGMSDataManager.shared
+        let matches = manager.terminals.filter { $0.identifier == terminalId }
+        guard let terminal = matches.first else { return }
+        manager.device.connectDevice(terminal)
+    }
+    
     func startScan() {
         EGMSDataManager.shared.device.scan()
     }

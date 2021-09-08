@@ -20,6 +20,7 @@ extension EGMSDeviceViewModel: EGMSDeviceModelOutput {
         let terminalViewModels = terminals.map {
             EGMSTerminalViewModel(
                 connected: $0.connected,
+                identifier: $0.identifier,
                 title: $0.name
             )
         }
@@ -31,6 +32,10 @@ extension EGMSDeviceViewModel: EGMSDeviceModelOutput {
     }
     
     func gmsDeviceModelDidUpdate(connected: Bool) {
+        if connected {
+            view.show(connecting: false)
+        }
+        
         view.show(connected: connected)
     }
     
@@ -41,6 +46,11 @@ extension EGMSDeviceViewModel: EGMSDeviceModelOutput {
 }
 
 extension EGMSDeviceViewModel: EGMSDeviceViewModelInput {
+    func didSelect(terminalWithId terminalId: UUID) {
+        view.show(connecting: true)
+        model.connect(terminalWithId: terminalId)
+    }
+    
     func toggleScan() {
         isScanning ? model.stopScan() : model.startScan()
     }

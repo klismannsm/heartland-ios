@@ -10,5 +10,6 @@ import Foundation
 
 struct EGMSTerminalViewModel {
     var connected: Bool
+    let identifier: UUID
     let title: String
 }

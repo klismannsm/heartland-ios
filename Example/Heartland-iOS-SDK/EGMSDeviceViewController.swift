@@ -8,6 +8,7 @@
 import UIKit
 
 class EGMSDeviceViewController: UIViewController {
+    weak var connectionPendingLabel: UILabel!
     weak var scanButton: UIButton!
     weak var terminalTableView: UITableView!
     var terminalViewModels = [EGMSTerminalViewModel]()
@@ -24,17 +25,28 @@ class EGMSDeviceViewController: UIViewController {
     }
     
     private func addEGMSDeviceSubviews() {
+        let connectionPendingView = UILabel()
         let scanButton = UIButton()
         let terminalTableView = UITableView()
         
+        view.addSubview(connectionPendingView)
         view.addSubview(scanButton)
         view.addSubview(terminalTableView)
+        view.bringSubviewToFront(connectionPendingView)
         
+        self.connectionPendingLabel = connectionPendingView
         self.scanButton = scanButton
         self.terminalTableView = terminalTableView
     }
     
     private func configureEGMSDeviceSubviews() {
+        connectionPendingLabel.backgroundColor = .egmsDarkGreen
+        connectionPendingLabel.isHidden = true
+        connectionPendingLabel.text = "Connecting..."
+        connectionPendingLabel.textAlignment = .center
+        connectionPendingLabel.textColor = .egmsLightGreen
+        connectionPendingLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         scanButton.addTarget(self, action: #selector(scanTapped), for: .touchUpInside)
         scanButton.backgroundColor = .egmsGreen
         scanButton.setTitleColor(.white, for: .normal)
@@ -50,6 +62,8 @@ class EGMSDeviceViewController: UIViewController {
     }
     
     private func constrainEGMSDeviceSubviews() {
+        connectionPendingLabel.pin(to: view)
+        
         NSLayoutConstraint.activate([
             scanButton.heightAnchor.constraint(equalToConstant: 54),
             scanButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
@@ -72,6 +86,11 @@ extension EGMSDeviceViewController: EGMSDeviceViewInput {
 
 extension EGMSDeviceViewController: EGMSDeviceViewModelOutput {
     func show(connected: Bool) {
+        terminalTableView.isHidden = true
+    }
+    
+    func show(connecting: Bool) {
+        connectionPendingLabel.isHidden = !connecting
     }
     
     func show(error: Error) {
@@ -102,6 +121,11 @@ extension EGMSDeviceViewController: UITableViewDataSource {
 }
 
 extension EGMSDeviceViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let terminalViewModel = terminalViewModels[indexPath.row]
+        viewModel.didSelect(terminalWithId: terminalViewModel.identifier)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         44
     }

@@ -17,6 +17,7 @@ protocol EGMSDeviceCoordinatorOutput: AnyObject {
 }
 
 protocol EGMSDeviceModelInput: AnyObject {
+    func connect(terminalWithId terminalId: UUID)
     func startScan()
     func stopScan()
 }
@@ -35,11 +36,13 @@ protocol EGMSDeviceViewOutput: AnyObject {
 }
 
 protocol EGMSDeviceViewModelInput: AnyObject {
+    func didSelect(terminalWithId terminalId: UUID)
     func toggleScan()
 }
 
 protocol EGMSDeviceViewModelOutput: AnyObject {
     func show(connected: Bool)
+    func show(connecting: Bool)
     func show(error: Error)
     func show(scanning: Bool)
     func show(terminalViewModels: [EGMSTerminalViewModel])
