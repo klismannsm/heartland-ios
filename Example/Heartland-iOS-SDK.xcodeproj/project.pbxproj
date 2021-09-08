@@ -75,6 +75,7 @@
 		EF918EE126E90E15003BBC3B /* EGMSHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF918EDC26E90E15003BBC3B /* EGMSHomeViewController.swift */; };
 		EF918EE426E91575003BBC3B /* UIViewController+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF918EE326E91575003BBC3B /* UIViewController+Utility.swift */; };
 		EF918EE626E91D8F003BBC3B /* EGMSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF918EE526E91D8F003BBC3B /* EGMSColor.swift */; };
+		EF918EE826E923B6003BBC3B /* EGMSDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF918EE726E923B6003BBC3B /* EGMSDataManager.swift */; };
 		EFA712B3268CE7000041EC21 /* HRGMSTransactionLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */; };
 		EFC04DE426CC75B200182524 /* HRGMSDeviceModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */; };
 		EFDB8B46267C0A62004DFCDA /* HRGMSTransactionService.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDB8B45267C0A62004DFCDA /* HRGMSTransactionService.m */; };
@@ -190,6 +191,7 @@
 		EF918EDC26E90E15003BBC3B /* EGMSHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGMSHomeViewController.swift; sourceTree = "<group>"; };
 		EF918EE326E91575003BBC3B /* UIViewController+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utility.swift"; sourceTree = "<group>"; };
 		EF918EE526E91D8F003BBC3B /* EGMSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGMSColor.swift; sourceTree = "<group>"; };
+		EF918EE726E923B6003BBC3B /* EGMSDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EGMSDataManager.swift; sourceTree = "<group>"; };
 		EFA712B1268CE7000041EC21 /* HRGMSTransactionLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HRGMSTransactionLogger.h; sourceTree = "<group>"; };
 		EFA712B2268CE7000041EC21 /* HRGMSTransactionLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HRGMSTransactionLogger.m; sourceTree = "<group>"; };
 		EFC04DE326CC75B200182524 /* HRGMSDeviceModelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRGMSDeviceModelService.swift; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				EF918EE526E91D8F003BBC3B /* EGMSColor.swift */,
+				EF918EE726E923B6003BBC3B /* EGMSDataManager.swift */,
 				EF918EE326E91575003BBC3B /* UIViewController+Utility.swift */,
 				EF918ECB26E90D99003BBC3B /* Device */,
 				EF918EE226E90E19003BBC3B /* Home */,
@@ -722,6 +725,7 @@
 				EF918EE026E90E15003BBC3B /* EGMSHomeModel.swift in Sources */,
 				EF6EA447263776030039FA6B /* HRGMSDeviceManager.m in Sources */,
 				EF918EE626E91D8F003BBC3B /* EGMSColor.swift in Sources */,
+				EF918EE826E923B6003BBC3B /* EGMSDataManager.swift in Sources */,
 				EF6EA442263775200039FA6B /* HRGMSDeviceViewController.m in Sources */,
 				EF7F84EF2698CE1300CA7099 /* HRPAXTransactionViewController.m in Sources */,
 				EF918ED326E90DF5003BBC3B /* EGMSTransactionContract.swift in Sources */,

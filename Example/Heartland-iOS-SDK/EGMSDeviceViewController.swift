@@ -5,6 +5,7 @@
 //  Created by Desimini, Wilson on 9/8/21.
 //
 
+import Heartland_iOS_SDK
 import UIKit
 
 class EGMSDeviceViewController: UIViewController {
@@ -34,7 +35,7 @@ class EGMSDeviceViewController: UIViewController {
         scanButton.backgroundColor = .egmsGreen
         scanButton.setTitleColor(.white, for: .normal)
         scanButton.translatesAutoresizingMaskIntoConstraints = false
-        updateScanViews()
+        show(scanning: false)
     }
     
     private func constrainEGMSDeviceSubviews() {
@@ -55,7 +56,17 @@ extension EGMSDeviceViewController: EGMSDeviceViewInput {
 }
 
 extension EGMSDeviceViewController: EGMSDeviceViewModelOutput {
-    func updateScanViews() {
-        scanButton.setTitle(viewModel.egmsDeviceScanButtonTitle, for: .normal)
+    func show(connected: Bool) {
+    }
+    
+    func show(error: Error) {
+    }
+    
+    func show(scanning: Bool) {
+        let buttonTitle = scanning ? "Stop Scanning" : "Scan for Devices"
+        scanButton.setTitle(buttonTitle, for: .normal)
+    }
+    
+    func show(terminals: [HpsTerminalInfo]) {
     }
 }

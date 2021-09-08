@@ -5,6 +5,7 @@
 //  Created by Desimini, Wilson on 9/8/21.
 //
 
+import Heartland_iOS_SDK
 import UIKit
 
 protocol EGMSDeviceCoordinatorInput: AnyObject {
@@ -21,7 +22,10 @@ protocol EGMSDeviceModelInput: AnyObject {
 }
 
 protocol EGMSDeviceModelOutput: AnyObject {
-    func didUpdate(scanning: Bool)
+    func gmsDeviceModelDidFind(terminals: [HpsTerminalInfo])
+    func gmsDeviceModelDidReceive(error: Error)
+    func gmsDeviceModelDidUpdate(scanning: Bool)
+    func gmsDeviceModelDidUpdate(connected: Bool)
 }
 
 protocol EGMSDeviceViewInput: UIViewController {
@@ -31,11 +35,12 @@ protocol EGMSDeviceViewOutput: AnyObject {
 }
 
 protocol EGMSDeviceViewModelInput: AnyObject {
-    var egmsDeviceScanButtonTitle: String { get }
-    
     func toggleScan()
 }
 
 protocol EGMSDeviceViewModelOutput: AnyObject {
-    func updateScanViews()
+    func show(connected: Bool)
+    func show(error: Error)
+    func show(scanning: Bool)
+    func show(terminals: [HpsTerminalInfo])
 }
