@@ -19,8 +19,9 @@ extension EGMSDeviceViewModel: EGMSDeviceModelOutput {
     func gmsDeviceModelDidFind(terminals: [HpsTerminalInfo]) {
         let terminalViewModels = terminals.map {
             EGMSTerminalViewModel(
-                connected: $0.connected,
+                description: $0.descriptionText,
                 identifier: $0.identifier,
+                terminalTypeName: $0.terminalType,
                 title: $0.name
             )
         }

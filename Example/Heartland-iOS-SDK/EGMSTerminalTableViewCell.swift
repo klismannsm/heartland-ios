@@ -11,7 +11,8 @@ import UIKit
 class EGMSTerminalTableViewCell: UITableViewCell {
     func configureCell(with viewModel: EGMSTerminalViewModel) {
         contentView.backgroundColor = .egmsDarkGreen
-        accessoryType = viewModel.connected ? .checkmark : .none
+        detailTextLabel?.text = viewModel.terminalTypeName
+        detailTextLabel?.textColor = .egmsOrange
         textLabel?.text = viewModel.title
         textLabel?.textColor = .egmsLightGreen
     }

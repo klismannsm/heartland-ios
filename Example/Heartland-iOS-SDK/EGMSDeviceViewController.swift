@@ -131,7 +131,7 @@ extension EGMSDeviceViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "terminalCellId") as! EGMSTerminalTableViewCell
+        let cell = EGMSTerminalTableViewCell(style: .value1, reuseIdentifier: "terminalCellId")
         let terminalViewModel = terminalViewModels[indexPath.row]
         cell.configureCell(with: terminalViewModel)
         return cell

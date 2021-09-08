@@ -9,7 +9,8 @@
 import Foundation
 
 struct EGMSTerminalViewModel {
-    var connected: Bool
+    let description: String
     let identifier: UUID
+    let terminalTypeName: String
     let title: String
 }
