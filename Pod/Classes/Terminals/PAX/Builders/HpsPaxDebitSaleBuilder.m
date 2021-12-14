@@ -41,10 +41,15 @@
     [subgroups addObject:amounts];
     
     HpsPaxAccountRequest *account = [[HpsPaxAccountRequest alloc] init];
+    if (self.allowDuplicates) {
+        account.dupOverrideFlag = @"1";
+    }
     [subgroups addObject:account];
     
     HpsPaxTraceRequest *traceRequest = [[HpsPaxTraceRequest alloc] init];
     traceRequest.referenceNumber = [NSString stringWithFormat:@"%d", self.referenceNumber];
+    if (self.clientTransactionId != nil)
+        traceRequest.clientTransactionId = self.clientTransactionId;
     if (self.details != nil) {
         traceRequest.invoiceNumber = self.details.invoiceNumber;
     }
@@ -60,7 +65,7 @@
     
     [device doDebit:PAX_TXN_TYPE_SALE_REDEEM andSubGroups:subgroups withResponseBlock:^(HpsPaxDebitResponse *response, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            response.transactionAmount =  [NSNumber numberWithDouble:[self.amount doubleValue]];
+            response.transactionAmount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:[self.amount doubleValue]] decimalValue]];
             responseBlock(response, error);
         });
     }];

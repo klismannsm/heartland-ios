@@ -21,6 +21,7 @@
 @property (nonatomic, readwrite) int referenceNumber;
 @property (nonatomic, strong) NSString *transactionId;
 @property (nonatomic, strong) NSNumber *amount;
+@property (nonatomic, strong) NSString *clientTransactionId;
 
 - (void) execute:(void(^)(HpsPaxDebitResponse*, NSError*))responseBlock;
 - (id)initWithDevice: (HpsPaxDevice*)paxDevice;

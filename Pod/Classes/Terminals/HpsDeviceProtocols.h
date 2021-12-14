@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import <GlobalMobileSDK/GlobalMobileSDK.h>
 
 @protocol IHPSDeviceMessage
 @required
@@ -44,15 +45,6 @@
 //@optional
 @end
 #pragma mark - HpaInterfaces
-
-@protocol IBatchCloseResponse <IHPSDeviceResponse>
-
-@property(nonatomic,strong) NSString *sequenceNumber;
-@property(nonatomic,strong) NSString *totalCount;
-@property(nonatomic,strong) NSString *totalAmount;
-
-@end
-
 @protocol IInitializeResponse
 @required
 @property (nonatomic,strong) NSString *serialNumber;
@@ -67,7 +59,8 @@
 - (void) openLane:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) reboot:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 - (void) reset:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
-- (void) batchClose:(void(^)(id <IBatchCloseResponse> , NSError*))responseBlock;
+- (void) GetLastResponse:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
+- (void) setSAFMode:(BOOL)isSAF response:(void(^)(id <IHPSDeviceResponse>, NSError*))responseBlock;
 
 @end
 

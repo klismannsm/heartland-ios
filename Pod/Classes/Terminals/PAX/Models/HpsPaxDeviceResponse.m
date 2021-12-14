@@ -24,18 +24,19 @@
 			self.approvalCode = self. hostResponse.hostResponseCode;
 		}
 		if (self.amountResponse != nil){
-			self.transactionAmount = [NSNumber numberWithDouble:self.amountResponse.approvedAmount];
-			self.amountDue = [NSNumber numberWithDouble:self.amountResponse.amountDue];
-			self.tipAmount = [NSNumber numberWithDouble:self.amountResponse.tipAmount];
-			self.cashBackAmount = [NSNumber numberWithDouble:self.amountResponse.cashBackAmount];
+            self.transactionAmount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.approvedAmount] decimalValue]];
+            self.amountDue = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.amountDue] decimalValue]];
+            self.tipAmount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.tipAmount] decimalValue]];
+            self.cashBackAmount = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.cashBackAmount] decimalValue]];
+            self.merchantFee = [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:self.amountResponse.merchantFee] decimalValue]];
 		}
 
 		if (self.accountResponse != nil) {
 			self.maskedCardNumber = self.accountResponse.accountNumber;
-			self.entryMode = self.accountResponse.entryMode;
+			self.entryMode = (int)self.accountResponse.entryMode;
 			self.expirationDate = self.accountResponse.expireDate;
 			self.paymentType = self.accountResponse.cardType;
-			self.cardHolderName = self.accountResponse.cardHolder;
+            self.cardholderName = self.accountResponse.cardHolder;
 			self.cvvResponseCode = self.accountResponse.cvdApprovalCode;
 			self.cvvResponseText = self.accountResponse.cvdMessage;
 			self.cardPresent = self.accountResponse.cardPressent;
@@ -60,7 +61,7 @@
                 self.transactionId = [transactionIdObject stringValue];
             } else if ([transactionIdObject isKindOfClass:[NSString class]]) {
                 self.transactionId = transactionIdObject;
-                        }
+            }
 			self.clientTransactionId = [self.extDataResponse.collection objectForKey:@"ECRRefNum"];
 
 			NSString *token = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TOKEN];
@@ -86,9 +87,25 @@
 			self.terminalVerficationResult = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TERMINAL_VERIFICATION_RESULTS];
             self.transactionStatusInformation = [self.extDataResponse.collection objectForKey:PAX_EXT_DATA_TRANSACTION_STATUS_INFORMATION];
 		}
+        if (self.transactionType != nil) {
+            self.transactionType = [self mapTransactionType:self.transactionType];
+        }
 	} @catch (NSException *exception) {
 		NSLog(@"Error on mapResponse");
 	}
+}
+
+- (NSString*) mapTransactionType:(NSString *)txnType{
+    
+    switch([txnType integerValue]) {
+        case 01:
+            return PAX_TRANSACTION_TYPE_toString[SALE];
+        case 02:
+            return PAX_TRANSACTION_TYPE_toString[RETURN];
+        default:
+            return self.transactionType;
+            
+    }
 }
 
 @end

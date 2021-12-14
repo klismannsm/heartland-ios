@@ -22,24 +22,27 @@
 @property (nonatomic,strong) NSString *terminalRefNumber;
 @property (nonatomic,strong) HpsTokenData *tokenData;
 @property (nonatomic,strong) NSString *signatureStatus;
+@property (nonatomic,readonly) BOOL gmsResponseIsApproval;
+@property (nonatomic,readonly) BOOL gmsResponseIsReversible;
+@property (nonatomic,readonly) BOOL gmsResponseIsTimeout;
 #pragma mark - TRANSACTIONAL
 @property (nonatomic,strong) NSString *transactionType;
 @property (nonatomic,strong) NSString *entryMethod;
 
 @property (nonatomic,strong) NSString *maskedCardNumber;
-@property (nonatomic) int entryMode;                //authrizationCode missing
+@property (nonatomic) int entryMode;
 @property (nonatomic,strong) NSString *approvalCode;
 
-@property (nonatomic,strong) NSNumber *transactionAmount;
-@property (nonatomic,strong) NSNumber *amountDue;
-@property (nonatomic,strong) NSNumber *balanceAmount;
+@property (nonatomic,strong) NSDecimalNumber *transactionAmount;
+@property (nonatomic,strong) NSDecimalNumber *amountDue;
+@property (nonatomic,strong) NSDecimalNumber *balanceAmount;
 
-@property (nonatomic,strong) NSString *cardHolderName;
+@property (nonatomic,strong) NSString *cardholderName;
 @property (nonatomic,strong) NSString *cardBin;
 @property (nonatomic) bool cardPresent;
 @property (nonatomic,strong) NSString *expirationDate;
-@property (nonatomic,strong) NSNumber *tipAmount;
-@property (nonatomic,strong) NSNumber *cashBackAmount;
+@property (nonatomic,strong) NSDecimalNumber *tipAmount;
+@property (nonatomic,strong) NSDecimalNumber *cashBackAmount;
 @property (nonatomic,strong) NSString *avsResultCode;
 @property (nonatomic,strong) NSString *avsResultText;
 @property (nonatomic,strong) NSString *cvvResponseCode;
@@ -47,8 +50,9 @@
 @property (nonatomic) BOOL taxExept;
 @property (nonatomic,strong) NSString *taxExeptId;
 @property (nonatomic,strong) NSString *paymentType; //ticket number missing
+@property (nonatomic,strong) NSDecimalNumber *merchantFee;
 
-@property (nonatomic,strong) NSNumber *approvedAmount;
+@property (nonatomic,strong) NSDecimalNumber *approvedAmount;
 @property (nonatomic,strong) HpsPaxHostResponse *hostResponse;
 #pragma mark - EMV
 @property (nonatomic,strong) NSString *applicationPrefferedName;
@@ -61,8 +65,15 @@
 @property (nonatomic,strong) NSString *cardHolderVerificationMethod;
 @property (nonatomic,strong) NSString *terminalVerficationResult;
 @property (nonatomic,strong) NSString *terminalSerialNumber;
+@property (nonatomic) BOOL storedResponse;
+@property (nonatomic,readwrite) NSString *lastResponseTransactionId;
+
+@property (nonatomic,strong) NSUUID *clientTransactionIdUUID;
 @property (nonatomic,strong) NSString *transactionStatusInformation;
+@property (nonatomic,strong) NSString *cardType;
 
 - (void) mapResponse:(id <HpaResposeInterface>) response;
+// @todo
+//+(HpsTerminalResponse*)terminalResponseFromVitalSDK:(TransactionResponse*)transactionResponse;
 
 @end

@@ -89,8 +89,8 @@
 	[recipt appendString:[NSString stringWithFormat:@"&x_expiration_date=%@",[self getValueOfObject:response.expirationDate]]];
 	[recipt appendString:[NSString stringWithFormat:@"&x_entry_method=%@",[HpsTerminalEnums entryModeToString:response.entryMode]]];
 	[recipt appendString:[NSString stringWithFormat:@"&x_approval=%@",[self getValueOfObject:response.approvalCode]]];
-	[recipt appendString:[NSString stringWithFormat:@"&x_transaction_amount=%@",response.transactionAmount]];
-	[recipt appendString:[NSString stringWithFormat:@"&x_amount_due=%@",[self getValueOfObject:response.amountDue]]];
+	[recipt appendString:[NSString stringWithFormat:@"&x_transaction_amount=%@",response.transactionAmount.stringValue]];
+	[recipt appendString:[NSString stringWithFormat:@"&x_amount_due=%@",response.amountDue.stringValue]];
 	[recipt appendString:[NSString stringWithFormat:@"&x_customer_verification_method=%@",[self getValueOfObject:response.cardHolderVerificationMethod]]];
 	[recipt appendString:[NSString stringWithFormat:@"&x_signature_status=%@",[self getValueOfObject:response.signatureStatus]]];
 	[recipt appendString:[NSString stringWithFormat:@"&x_response_text=%@",[self getValueOfObject:response.responseText]]];
@@ -98,7 +98,7 @@
 	NSLog(@"Recipt = %@", recipt);
 
 	[self writeStringToFile:[NSString stringWithFormat:@"Host Reference Number: %@ \n",response.hostResponse.hostReferenceNumber]];
-	[self writeStringToFile:[NSString stringWithFormat:@"Transaction ID: %d \n",response.transactionId]];
+	[self writeStringToFile:[NSString stringWithFormat:@"Transaction ID: %@ \n",response.transactionId]];
 
 	[self writeStringToFile:[NSString stringWithFormat:@"Recipt : %@ \n\n",recipt]];
 
