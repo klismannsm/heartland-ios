@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
 
   s.frameworks = 'UIKit'
-  s.dependency 'XMLDictionary'
+  s.dependency 'XMLDictionary', :git => "https://github.com/MobileBytes/XMLDictionary.git"
   s.dependency 'VitalSDK'
   s.swift_version = '5.0'
 end
