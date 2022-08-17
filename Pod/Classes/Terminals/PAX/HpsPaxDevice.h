@@ -14,6 +14,7 @@
 #import "HpaPaxSafUploadResponse.h"
 #import "HpaPaxSafDeleteResponse.h"
 #import "HpaPaxSafReportResponse.h"
+#import "HpsPaxTerminalStatusResponse.h"
 
 @interface HpsPaxDevice : NSObject
 {
@@ -30,7 +31,7 @@
 - (void) reset:(void(^)(HpsPaxDeviceResponse*, NSError*))responseBlock;
 - (void) reboot:(void(^)(HpsPaxDeviceResponse*, NSError*))responseBlock;
 - (void) setSafMode:(SafMode)safMode withResponseBlock:(void(^)(HpsPaxDeviceResponse*, NSError*))responseBlock;
-
+- (void) terminalStatus:(void(^)(HpsPaxTerminalStatusResponse*, NSError*))responseBlock;
 //credit
 - (void) doCredit:(NSString*)txnType
      andSubGroups:(NSArray*)subGroups

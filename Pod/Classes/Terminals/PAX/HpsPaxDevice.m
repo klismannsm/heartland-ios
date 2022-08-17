@@ -375,6 +375,39 @@
     }];
 }
 
+- (void) terminalStatus:(void (^)(HpsPaxTerminalStatusResponse *, NSError *))responseBlock{
+
+    id<IHPSDeviceMessage> request = [HpsTerminalUtilities buildRequest:A35_RSP_REPORT_STATUS];
+
+    [self.interface send:request andResponseBlock:^(NSData *data, NSError *error) {
+        if (error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                responseBlock(nil, error);
+            });
+        }else{
+                //done
+            NSString *dataview = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            NSLog(@"data returned: %@", dataview);
+            HpsPaxTerminalStatusResponse *response;
+            @try {
+                    //parse data
+                response = [[HpsPaxTerminalStatusResponse alloc] initWithBuffer:data];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(response, nil);
+                });
+            } @catch (NSException *exception) {
+                NSDictionary *userInfo = @{NSLocalizedDescriptionKey: [exception description]};
+                NSError *error = [NSError errorWithDomain:self->errorDomain
+                                                     code:CocoaError
+                                                 userInfo:userInfo];
+
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    responseBlock(nil, error);
+                });
+            }
+        }
+    }];
+}
 
 
 #pragma mark -
